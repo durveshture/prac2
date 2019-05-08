@@ -1,0 +1,61 @@
+<!-- /*  author: Durvesh Ture(173571)
+ *  version: 1.0.1
+ */ -->
+
+
+
+
+  <div style="width:60%; margin:0 auto;">
+      <datalist *ngFor="let product of productArr" id="languages">
+          <option value="{{ product.productName }}"> </option>
+          <option value="{{ product.productBrand }}"> </option>
+        </datalist>
+    <input
+      class="searchBar"
+      (keyup)="getProducts()"
+      [(ngModel)]="queryString"
+      type="text"
+      list="languages"
+      placeholder="Search anything you want"
+    />
+        <mat-icon matSuffix>search</mat-icon>
+
+  </div>
+
+
+
+
+<div class="container" *ngIf="resultTrue">
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <!---------------------DISPLAY PRODUCTS------------------>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>productId</th>
+              <th>categoryId</th>
+              <th>productName</th>
+              <th>productBrand</th>
+              <th>productDescription</th>
+              <th>viewCount</th>
+              <th>actualPrice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!----------------USING *ngFor------------------------>
+            <tr *ngFor="let product of productArr; let i = index">
+              <td>{{ product.productId }}</td>
+              <td>{{ product.categoryId }}</td>
+              <td>{{ product.productName }}</td>
+              <td>{{ product.productBrand }}</td>
+              <td>{{ product.productDescription }}</td>
+              <td>{{ product.viewCount }}</td>
+              <td>{{ product.actualPrice }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

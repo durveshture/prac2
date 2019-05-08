@@ -1,0 +1,18 @@
+.searchBar {
+width: 50%;
+border-radius: 4px
+}
+
+.searchButton {
+  -webkit-text-fill-color: rgb(0, 4, 255);
+}
+/* search */
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
